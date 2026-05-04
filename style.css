@@ -1,11 +1,11 @@
 /* 1. Глобальні налаштування та змінні (ТЕМНА ТЕМА) */
 :root {
     --primary-color: #f5f6fa;    /* Світлий для заголовків та лого */
-    --accent-color: #0fb9b1;     /* Яскравий бірюзовий акцент (залишаємо) */
+    --accent-color: #0fb9b1;     /* Яскравий бірюзовий акцент */
     --accent-hover: #079992;
     --bg-color: #1e272e;         /* Глибокий темний фон сайту */
     --text-color: #c8d6e5;       /* Світло-сірий для основного тексту */
-    --card-bg: #2d3436;          /* Фон для карток (трохи світліший за основний) */
+    --card-bg: #2d3436;          /* Фон для карток */
     --header-height: 80px;       
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -300,65 +300,65 @@ h2::after {
     transform: translateY(-2px);
 }
 
-/* 8. Форма контактів */
-form {
+/* 8. Блок контактів */
+.contact-info {
     max-width: 700px;
     margin: 0 auto;
     background: var(--card-bg);
     padding: 4rem;
     border-radius: 30px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-}
-
-.form-group {
-    margin-bottom: 2rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 0.8rem;
-    font-weight: 600;
+    text-align: center;
     color: var(--primary-color);
-    font-size: 1.1rem;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 1.2rem;
-    border: 2px solid #4b6584; /* Темніша рамка */
-    background: #353b48; /* Темний фон для полів вводу */
-    color: var(--primary-color); /* Світлий текст всередині */
-    border-radius: 12px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 2.5rem;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.contact-info li strong {
+    color: var(--accent-color);
+    display: inline-block;
+    width: 120px;
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.contact-info span, 
+.contact-info a {
+    color: var(--primary-color);
+}
+
+.contact-info a {
+    text-decoration: none;
     transition: var(--transition);
 }
 
-/* Колір плейсхолдера (підказки) в полях */
-input::placeholder, textarea::placeholder {
-    color: #a4b0be;
-}
-
-input:focus, textarea:focus {
-    border-color: var(--accent-color);
-    background: #2d3436;
-    box-shadow: 0 0 0 4px rgba(15, 185, 177, 0.15);
-}
-
-.btn-submit {
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1.2rem;
-    padding: 1.2rem;
+.contact-info a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* Футер */
 footer {
     text-align: center;
     padding: 2rem;
-    background: #111417; /* Ще темніший для футера */
+    background: #111417;
     color: #747d8c;
     margin-top: 5rem;
 }
@@ -394,7 +394,12 @@ footer {
     #hero h1 {
         font-size: 3rem;
     }
-    form {
+    .contact-info {
         padding: 2rem;
+    }
+    .contact-info li strong {
+        display: block;
+        text-align: left;
+        margin-bottom: 0.3rem;
     }
 }
